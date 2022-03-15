@@ -6,21 +6,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Receita_Ingrediente")
+@Table(name = "recipes_ingredients")
 public class Receita_Ingrediente {
 	
 	@Id
-	@Column(name = "idReceita")
+	@Column(name = "idrecipes")
 	private Integer idReceita;
 	
 	@Id
-	@Column(name = "idIngrediente")
+	@Column(name = "idingredients")
 	private Integer idIngrediente;
 	
-	@Column(name = "quantidadeIngrediente")
+	@Column(name = "amountingredients")
 	private Integer quantidadeIngrediente;
 	
-	@Column(name = "descricaoIngrediente")
+	@Column(name = "descripitoningredients")
 	private String descricaoIngrediente;
 
 }

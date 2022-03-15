@@ -10,21 +10,21 @@ import javax.persistence.Table;
 import br.com.homefood.classenum.TipoReceita;
 
 @Entity
-@Table(name = "Receita")
+@Table(name = "recipes")
 public class Receita {
 	
 	@Id
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "tipo")
+	@Column(name = "types")
 	@Enumerated(EnumType.STRING)
 	private TipoReceita tipo;
 	
-	@Column(name = "tempoPreparo")
+	@Column(name = "timepreparations")
 	private String tempoPreparo;
 	
-	@Column(name = "modoPreparo")
+	@Column(name = "modepreparations")
 	private String modoPreparo;
 
 }
