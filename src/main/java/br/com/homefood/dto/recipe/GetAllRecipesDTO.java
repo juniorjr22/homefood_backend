@@ -1,16 +1,16 @@
 package br.com.homefood.dto.recipe;
 
 import br.com.homefood.classenum.RecipeType;
-import br.com.homefood.entity.recipeingredient.RecipeIngredient;
+import br.com.homefood.dto.recipeingredient.GetAllRecipeIngredientDTO;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 @Builder
-@Getter
-@Setter
+@AllArgsConstructor
 public class GetAllRecipesDTO {
 
     private Integer id;
@@ -23,6 +23,5 @@ public class GetAllRecipesDTO {
 
     private String preparationMode;
 
-    private List<RecipeIngredient> ingredients;
-
+    private List<GetAllRecipeIngredientDTO> ingredients;
 }

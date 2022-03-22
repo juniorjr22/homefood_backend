@@ -15,6 +15,7 @@ public class RecipeFacade {
     @Autowired
     private RecipeService service;
 
+    @Autowired
     private RecipeMapper mapper;
 
     public List<GetAllRecipesDTO> getAllRecipes() {

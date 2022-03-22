@@ -18,7 +18,7 @@ public class RecipeController {
     @Autowired
     private RecipeFacade facade;
 
-    @GetMapping(name = "/all")
+    @GetMapping(value = "/all")
     public ResponseEntity<List<GetAllRecipesDTO>> getAllRecipes() {
         List<GetAllRecipesDTO> dto = facade.getAllRecipes();
         return new ResponseEntity<>(dto, HttpStatus.OK);
