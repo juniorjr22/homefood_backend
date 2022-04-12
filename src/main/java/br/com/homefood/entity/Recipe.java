@@ -63,4 +63,7 @@ public class Recipe {
 	)
 	private List<RecipeIngredient> ingredients;
 
+	@Column(name = "amount_ingredients")
+	private Integer amountIngredients;
+
 }
