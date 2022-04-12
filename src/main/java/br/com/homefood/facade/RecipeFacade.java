@@ -1,6 +1,8 @@
 package br.com.homefood.facade;
 
 import br.com.homefood.dto.recipe.GetAllRecipesDTO;
+import br.com.homefood.dto.recipe.PostSaveRecipeDTO;
+import br.com.homefood.entity.Recipe;
 import br.com.homefood.mapper.RecipeMapper;
 import br.com.homefood.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +27,10 @@ public class RecipeFacade {
                 .stream()
                 .map(mapper::fromEntityToGetAllRecipesDto)
                 .collect(Collectors.toList());
+    }
+
+    public Integer saveRecipe(PostSaveRecipeDTO saveRecipeDTO) {
+        Recipe recipe = mapper.fromDTOToRecipe(saveRecipeDTO);
+        return service.saveRecipe(recipe);
     }
 }

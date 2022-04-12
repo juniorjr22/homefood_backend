@@ -17,4 +17,10 @@ public class RecipeServiceImpl implements RecipeService {
     public List<Recipe> getAllRecipes() {
         return repository.findAll();
     }
+
+    public Integer saveRecipe(Recipe recipe) {
+
+        Recipe recipeSaved = repository.save(recipe);
+        return recipeSaved.getId();
+    }
 }
