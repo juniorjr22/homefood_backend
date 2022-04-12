@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 env:
-  DB_URL: ${{secrets.DB_URL}}
+  PROFILE_ACTIVE: ${{secrets.PROFILE_ACTIVE}}
   DB_USERNAME: ${{secrets.DB_USERNAME}}
   DB_PASSWORD: ${{secrets.DB_PASSWORD}}
 
