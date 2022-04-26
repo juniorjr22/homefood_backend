@@ -1,6 +1,7 @@
 package br.com.homefood.mapper;
 
 import br.com.homefood.dto.recipe.GetAllRecipesDTO;
+import br.com.homefood.dto.recipe.PostSaveRecipeDTO;
 import br.com.homefood.entity.Recipe;
 import org.mapstruct.Mapper;
 
@@ -10,5 +11,7 @@ import org.mapstruct.Mapper;
 public interface RecipeMapper {
 
     GetAllRecipesDTO fromEntityToGetAllRecipesDto(Recipe recipe);
+
+    Recipe fromPostSaveRecipeDTOToRecipe(PostSaveRecipeDTO saveRecipeDTO);
 
 }
