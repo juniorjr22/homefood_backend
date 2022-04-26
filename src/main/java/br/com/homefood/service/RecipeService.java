@@ -8,5 +8,5 @@ public interface RecipeService {
 
     List<Recipe> getAllRecipes();
 
-    Integer saveRecipe(Recipe recipe);
+    Integer save(Recipe recipe);
 }

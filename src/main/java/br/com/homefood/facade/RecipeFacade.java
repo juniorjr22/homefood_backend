@@ -29,8 +29,9 @@ public class RecipeFacade {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
     public Integer saveRecipe(PostSaveRecipeDTO saveRecipeDTO) {
-        Recipe recipe = mapper.fromDTOToRecipe(saveRecipeDTO);
-        return service.saveRecipe(recipe);
+        Recipe recipe = mapper.fromPostSaveRecipeDTOToRecipe(saveRecipeDTO);
+        return service.save(recipe);
     }
 }

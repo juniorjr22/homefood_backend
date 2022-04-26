@@ -12,6 +12,6 @@ public interface RecipeMapper {
 
     GetAllRecipesDTO fromEntityToGetAllRecipesDto(Recipe recipe);
 
-    Recipe fromDTOToRecipe(PostSaveRecipeDTO saveRecipeDTO);
+    Recipe fromPostSaveRecipeDTOToRecipe(PostSaveRecipeDTO saveRecipeDTO);
 
 }

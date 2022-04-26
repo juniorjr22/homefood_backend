@@ -6,14 +6,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class SaveRecipeIngredientDTO {
 
-    private String ingredientAmount;
+    @NotEmpty
     private String ingredientDescription;
+
+    @Valid
     private SaveIngredientDTO ingredient;
 
 }

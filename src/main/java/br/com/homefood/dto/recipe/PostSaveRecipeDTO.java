@@ -7,6 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
@@ -14,11 +17,22 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class PostSaveRecipeDTO {
-    private String name;
-    private RecipeType type;
-    private String preparationTime;
-    private String preparationMode;
-    private List<SaveRecipeIngredientDTO> ingredients;
 
+    @NotEmpty
+    private String name;
+
+    @NotNull
+    private RecipeType type;
+
+    private String preparationTime;
+
+    @NotEmpty
+    private String preparationMode;
+
+    @NotNull
+    private Integer amountIngredients;
+
+    @Valid
+    private List<SaveRecipeIngredientDTO> ingredients;
 
 }
