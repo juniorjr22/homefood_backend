@@ -1,7 +1,7 @@
 package br.com.homefood.mapper;
 
 import br.com.homefood.dto.recipeingredient.GetAllRecipeIngredientDTO;
-import br.com.homefood.entity.recipeingredient.RecipeIngredient;
+import br.com.homefood.entity.RecipeIngredient;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = {

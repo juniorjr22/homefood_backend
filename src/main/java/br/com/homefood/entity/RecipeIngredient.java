@@ -1,7 +1,6 @@
-package br.com.homefood.entity.recipeingredient;
+package br.com.homefood.entity;
 
-import br.com.homefood.entity.Ingredient;
-import br.com.homefood.entity.Recipe;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -11,11 +10,12 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Getter
@@ -29,25 +29,25 @@ import javax.persistence.Table;
 @Table(name = "recipe_ingredient")
 public class RecipeIngredient {
 
-	@EmbeddedId
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ToString.Include
 	@EqualsAndHashCode.Include
-	private RecipeIngredientId id;
+	private Integer id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("recipeId")
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "recipe_id")
+	@ToString.Include
+	@EqualsAndHashCode.Include
+	@JsonBackReference
 	private Recipe recipe;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("ingredientId")
+	@ManyToOne
 	@ToString.Include
 	@EqualsAndHashCode.Include
 	private Ingredient ingredient;
-
-	@Column(name = "ingredient_amount")
-	private String ingredientAmount;
 	
-	@Column(name = "ingredient_description")
+	@Column(name = "ingredient_description", nullable = false)
 	private String ingredientDescription;
 
 }
