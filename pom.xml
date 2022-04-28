@@ -91,21 +91,35 @@
 		</dependency>
 	</dependencies>
 
-<!--	<build>-->
-<!--		<plugins>-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>br.com.homefood.HomefoodApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 <!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<version>3.8.1</version>-->
 <!--			</plugin>-->
-<!--&lt;!&ndash;			<plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;				<artifactId>maven-compiler-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;				<version>3.8.1</version>&ndash;&gt;-->
-<!--&lt;!&ndash;			</plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;			<plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;				<artifactId>maven-surefire-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;				<version>2.22.2</version>&ndash;&gt;-->
-<!--&lt;!&ndash;			</plugin>&ndash;&gt;-->
-<!--		</plugins>-->
-<!--	</build>-->
+<!--			<plugin>-->
+<!--				<artifactId>maven-surefire-plugin</artifactId>-->
+<!--				<version>2.22.2</version>-->
+<!--			</plugin>-->
+		</plugins>
+	</build>
 
 </project>
