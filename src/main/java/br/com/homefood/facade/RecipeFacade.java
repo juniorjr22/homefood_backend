@@ -1,6 +1,7 @@
 package br.com.homefood.facade;
 
 import br.com.homefood.dto.recipe.GetAllRecipesDTO;
+import br.com.homefood.dto.recipe.GetRecipeForIngredientDTO;
 import br.com.homefood.dto.recipe.PostSaveRecipeDTO;
 import br.com.homefood.entity.Recipe;
 import br.com.homefood.mapper.RecipeMapper;
@@ -33,5 +34,13 @@ public class RecipeFacade {
     public Integer saveRecipe(PostSaveRecipeDTO saveRecipeDTO) {
         Recipe recipe = mapper.fromPostSaveRecipeDTOToRecipe(saveRecipeDTO);
         return service.save(recipe);
+    }
+
+    @Transactional(readOnly = true)
+    public List<GetRecipeForIngredientDTO> getRecipeForIngredient(List<Integer> ids) {
+        return service.getRecipeForIngredient(ids)
+                .stream()
+                .map(mapper::fromEntityToGetRecipeForIngredientDTO)
+                .collect(Collectors.toList());
     }
 }

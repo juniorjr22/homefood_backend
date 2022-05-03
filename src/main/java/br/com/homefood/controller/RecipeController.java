@@ -1,16 +1,13 @@
 package br.com.homefood.controller;
 
 import br.com.homefood.dto.recipe.GetAllRecipesDTO;
+import br.com.homefood.dto.recipe.GetRecipeForIngredientDTO;
 import br.com.homefood.dto.recipe.PostSaveRecipeDTO;
 import br.com.homefood.facade.RecipeFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -36,4 +33,12 @@ public class RecipeController {
         Integer id = facade.saveRecipe(saveRecipeDto);
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
+
+    @GetMapping
+    public ResponseEntity<List<GetRecipeForIngredientDTO>> getRecipeForIngredient(@RequestParam List<Integer> ids){
+        List<GetRecipeForIngredientDTO> dto = facade.getRecipeForIngredient(ids);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
+
+    }
+
 }

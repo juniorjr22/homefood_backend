@@ -9,4 +9,7 @@ public interface RecipeService {
     List<Recipe> getAllRecipes();
 
     Integer save(Recipe recipe);
+    List<Recipe> getRecipeForIngredient(List<Integer> ids);
+
+
 }
