@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 
 
 import java.util.List;
@@ -35,8 +35,8 @@ public class RecipeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<GetRecipeForIngredientDTO>> getRecipeForIngredient(@RequestParam List<Integer> ids){
-        List<GetRecipeForIngredientDTO> dto = facade.getRecipeForIngredient(ids);
+    public ResponseEntity<List<GetRecipeForIngredientDTO>> findByIngredients(@RequestParam @NotEmpty List<Integer> ids){
+        List<GetRecipeForIngredientDTO> dto = facade.findByIngredients(ids);
         return new ResponseEntity<>(dto, HttpStatus.OK);
 
     }

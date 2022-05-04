@@ -37,8 +37,8 @@ public class RecipeFacade {
     }
 
     @Transactional(readOnly = true)
-    public List<GetRecipeForIngredientDTO> getRecipeForIngredient(List<Integer> ids) {
-        return service.getRecipeForIngredient(ids)
+    public List<GetRecipeForIngredientDTO> findByIngredients(List<Integer> ids) {
+        return service.findByIngredients(ids)
                 .stream()
                 .map(mapper::fromEntityToGetRecipeForIngredientDTO)
                 .collect(Collectors.toList());
