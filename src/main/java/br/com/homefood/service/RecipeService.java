@@ -11,5 +11,7 @@ public interface RecipeService {
     Integer save(Recipe recipe);
     List<Recipe> findByIngredients(List<Integer> ids);
 
+    List<Recipe> findByIngredientsPlus(List<Integer> ids);
+
 
 }

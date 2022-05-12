@@ -43,4 +43,12 @@ public class RecipeFacade {
                 .map(mapper::fromEntityToGetRecipeForIngredientDTO)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<GetRecipeForIngredientDTO> findByIngredientsPlus(List<Integer> ids) {
+        return service.findByIngredients(ids)
+                .stream()
+                .map(mapper::fromEntityToGetRecipeForIngredientDTO)
+                .collect(Collectors.toList());
+    }
 }

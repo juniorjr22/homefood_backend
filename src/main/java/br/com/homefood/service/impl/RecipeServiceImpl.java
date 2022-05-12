@@ -43,7 +43,13 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     public List<Recipe> findByIngredients(List<Integer> ids) {
+
         return repository.findByIngredients(ids);
+    }
+
+    public List<Recipe> findByIngredientsPlus(List<Integer> ids) {
+
+        return repository.findByIngredientsPLus(ids);
     }
 
 

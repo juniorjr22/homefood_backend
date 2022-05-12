@@ -19,6 +19,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
             " where ri.ingredient_id not in (:ids) " +
             " ) ")
     List<Recipe> findByIngredients(@Param("ids") List<Integer> ids);
+    List<Recipe> findByIngredientsPLus(@Param("ids") List<Integer> ids);
 
 
 }

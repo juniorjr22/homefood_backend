@@ -41,4 +41,10 @@ public class RecipeController {
 
     }
 
+    @GetMapping
+    public ResponseEntity<List<GetRecipeForIngredientDTO>> findByIngredientsPlus(@RequestParam @NotEmpty List<Integer> ids){
+        List<GetRecipeForIngredientDTO> dto = facade.findByIngredients(ids);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
+    }
+
 }
