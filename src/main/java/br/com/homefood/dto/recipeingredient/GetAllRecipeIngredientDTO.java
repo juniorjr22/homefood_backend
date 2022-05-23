@@ -12,4 +12,6 @@ public class GetAllRecipeIngredientDTO {
 
     private IngredientDTO ingredient;
 
+    private String ingredientDescription;
+
 }

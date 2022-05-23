@@ -45,11 +45,15 @@ import java.util.List;
 	 @EqualsAndHashCode.Include
 	 private String name;
 
-	 @Column(name = "type", nullable = false)
-	 @Enumerated(EnumType.STRING)
 	 @ToString.Include
 	 @EqualsAndHashCode.Include
-	 private RecipeType type;
+	 @Column(name = "salty", nullable = false)
+	 private Boolean salty;
+
+	 @ToString.Include
+	 @EqualsAndHashCode.Include
+	 @Column(name = "candy", nullable = false)
+	 private Boolean candy;
 
 	 @Column(name = "preparation_time")
 	 private String preparationTime;

@@ -21,6 +21,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public Ingredient save(Ingredient ingredient) {
-        return repository.save(ingredient);
+        return repository.findByName(ingredient.getName())
+                .orElseGet(() -> repository.save(ingredient));
     }
 }
