@@ -22,7 +22,10 @@ public class PostSaveRecipeDTO {
     private String name;
 
     @NotNull
-    private RecipeType type;
+    private Boolean salty;
+
+    @NotNull
+    private Boolean candy;
 
     private String preparationTime;
 

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RecipeServiceImpl implements RecipeService {
@@ -29,6 +30,10 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     public Integer save(Recipe recipe) {
+        if (repository.findByName(recipe.getName()).isPresent()) {
+            throw new IllegalArgumentException("A recipe with the same name already exists");
+        }
+
         List<RecipeIngredient> recipeIngredients = recipe.getIngredients();
         Recipe recipeSaved = repository.save(recipe);
         for (RecipeIngredient recipeIngredient : recipeIngredients) {
