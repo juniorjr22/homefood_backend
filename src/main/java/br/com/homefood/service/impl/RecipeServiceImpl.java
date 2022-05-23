@@ -46,4 +46,11 @@ public class RecipeServiceImpl implements RecipeService {
         }
         return recipeSaved.getId();
     }
+
+    public List<Recipe> findByIngredients(List<Integer> ids) {
+        return repository.findByIngredients(ids);
+    }
+
+
+
 }
