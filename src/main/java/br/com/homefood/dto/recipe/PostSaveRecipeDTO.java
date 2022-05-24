@@ -1,6 +1,5 @@
 package br.com.homefood.dto.recipe;
 
-import br.com.homefood.classenum.RecipeType;
 import br.com.homefood.dto.recipeingredient.SaveRecipeIngredientDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
