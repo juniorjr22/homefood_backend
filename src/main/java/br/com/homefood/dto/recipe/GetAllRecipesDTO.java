@@ -1,14 +1,10 @@
 package br.com.homefood.dto.recipe;
 
-import br.com.homefood.classenum.RecipeType;
 import br.com.homefood.dto.recipeingredient.GetAllRecipeIngredientDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
-import javax.persistence.Column;
 import java.util.List;
 
 @Data
