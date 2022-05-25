@@ -1,6 +1,5 @@
 package br.com.homefood.dto.recipe;
 
-import br.com.homefood.classenum.RecipeType;
 import br.com.homefood.dto.recipeingredient.GetAllRecipeIngredientDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +16,9 @@ public class GetAllRecipesDTO {
 
     private String name;
 
-    private RecipeType type;
+    private Boolean salty;
+
+    private Boolean candy;
 
     private String preparationTime;
 
