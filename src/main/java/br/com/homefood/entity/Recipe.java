@@ -14,6 +14,7 @@
  import javax.persistence.GeneratedValue;
  import javax.persistence.GenerationType;
  import javax.persistence.Id;
+ import javax.persistence.Lob;
  import javax.persistence.OneToMany;
  import javax.persistence.Table;
  import java.util.List;
@@ -55,10 +56,11 @@
 	 @Column(name = "preparation_time")
 	 private String preparationTime;
 
-	 @Column(name = "preparation_mode", nullable = false)
-	 private String preparationMode;
+     @Lob
+     @Column(name = "preparation_mode", nullable = false)
+     private String preparationMode;
 
-	 @OneToMany(mappedBy = "recipe")
+     @OneToMany(mappedBy = "recipe")
 	 @JsonManagedReference
 	 private List<RecipeIngredient> ingredients;
 

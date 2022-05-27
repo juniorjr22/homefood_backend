@@ -14,8 +14,8 @@ import javax.validation.constraints.Pattern;
 @Builder
 public class SaveIngredientDTO {
 
+//    @Pattern(regexp = "([a-z]+)|([a-z]+[^A-Z\\d])|([a-z]+[^A-Z\\d][a-z])|([^A-Z\\d][a-z])", message = "The ingredient name must be lowercase")
     @NotEmpty
-    @Pattern(regexp = "([a-z]+)|([a-z]+[^A-Z\\d])|([a-z]+[^A-Z\\d][a-z])|([^A-Z\\d][a-z])", message = "The ingredient name must be lowercase")
     private String name;
 
 }
